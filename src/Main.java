@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+                                                     // Доброго времени суток! Приятно познакомиться  :)
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker(scanner);
 
@@ -32,13 +32,13 @@ public class Main {
     }
 
     static void printMenu() {
-        System.out.println("");
+        System.out.println();
         System.out.println("====___Введите номер подходящего пункта меню___====");
         System.out.println(" ' 1 ' Ввести количество шагов за определённый день.");
         System.out.println(" ' 2 ' Изменить цель по количеству шагов за день.");
         System.out.println(" ' 3 ' Напечатать статистику за определённый месяц.");
         System.out.println(" ' 4 ' Выйти из приложения.");
-        System.out.println("");
+        System.out.println();
 
     }
 }

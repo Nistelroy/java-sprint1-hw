@@ -16,40 +16,38 @@ public class StepTracker {
         }
     }
 
-    void addNewNumberStepsPerDay() {
-
+    void addNewNumberStepsPerDay() {   // выкидывать юзера в начальное меню из-за ошибки в шаге и заставлять набирать с начала ну такое ¯\_(ツ)_/¯
+                                        // Но раз тз...
         int monthNumber = 0;
         int dayNumber = 0;
 
         System.out.println("Введите номер месяца от 1 до 12");
         int userInput = scanner.nextInt();
-
-            if (userInput > 0 && userInput <= 12) {
-                monthNumber = userInput;
-
-                System.out.println("Введите номер дня от 1 до 30");
-                userInput = scanner.nextInt();
-
-                   if (userInput > 0 && userInput <= 30) {
-                     dayNumber = userInput;
-
-                     System.out.println("Введите количество шагов");
-                     userInput = scanner.nextInt();
-
-                        if (userInput > 0) {
-
-                            monthToData[monthNumber - 1].days[dayNumber - 1] = userInput;
-                            System.out.println("Успешно. Месяц: "+ monthNumber +" День: "+ dayNumber +"  Шагов: "+ userInput);
-
-                        } else
-                            System.out.println("Колличество шагов должно быть больше чем '0'.  ' " + userInput + " ' не подходит");
-
-                   } else
-                       System.out.println("Ошибка ввода дня. ' " + userInput + " ' не подходит");
-
-            } else
+            if (userInput <= 0 || userInput > 12) {
                 System.out.println("Ошибка ввода месяца. ' " + userInput + " ' не подходит");
+                return;
+            }
+            else monthNumber = userInput;
 
+
+        System.out.println("Введите номер дня от 1 до 30");
+        userInput = scanner.nextInt();
+            if (userInput <= 0 || userInput > 30) {
+                System.out.println("Ошибка ввода дня. ' " + userInput + " ' не подходит");
+                return;
+            }
+            else dayNumber = userInput;
+
+
+        System.out.println("Введите количество шагов");
+        userInput = scanner.nextInt();
+            if (userInput <= 0) {
+                System.out.println("Колличество шагов должно быть больше чем '0'.  ' " + userInput + " ' не подходит");
+            }
+            else {
+                monthToData[monthNumber - 1].days[dayNumber - 1] = userInput;
+                System.out.println("Успешно. Месяц: " + monthNumber + " День: " + dayNumber + "  Шагов: " + userInput);
+        }
     }
 
     void changeStepGoal(){
